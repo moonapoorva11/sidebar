@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sidebar</title>
+    <link href="https://kit.fontawesome.com/7b75a617ec.css" rel="stylesheet">
+   
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+      
+        }
+
+      
+
+       
+        .sidebar {
+            position: fixed; 
+             top: 0;
+            left: 0;
+            height: 100%; 
+            background-color: rgb(194, 45, 152);
+            width: 250px; 
+            border-right: 1px solid rgb(134, 127, 127);
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: column;
+            visibility: hidden;
+            
+        }
+
+        .menu-item {
+            margin-top: 20px;
+          
+            padding: 10px 15px; 
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0 20px 20px 0;
+            margin-bottom: 10px;
+           
+        }
+
+        .menu-item:hover {
+            
+            background-color: white;
+            border: 0.5px solid rgb(95, 91, 91);
+        }
+
+        .menu-icon {
+            
+            font-size: 20px;
+            margin-right: 15px; 
+        }
+
+        .menu-text {
+
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .menu-text:hover{
+            color: black;
+        }
+
+        .side-bar{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            color:black;
+            font-size: 30px;
+            }
+
+        .close{
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+   
+
+    <i class="fa-solid fa-bars side-bar" onclick="openSidebar()" id="ham-menu"></i>
+
+    <div class="sidebar" id="sidebar">
+        <div class="close" onclick="closeSidebar()">
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        
+        <div class="menu-item">
+            <i class="fa-solid fa-house menu-icon"></i>
+            <a href="home" class="menu-text">Home</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-user menu-icon"></i>
+            <a href="home" class="menu-text">About</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-envelope menu-icon"></i>
+            <a href="home" class="menu-text">Contact</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-toolbox menu-icon"></i>
+            <a href="home" class="menu-text">Preferences</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-gear menu-icon" ></i>
+             <a href="home" class="menu-text">Setting</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+             <a href="home" class="menu-text">Logout</a>
+        </div>
+    </div>
+
+        <script src="https://kit.fontawesome.com/7b75a617ec.js" crossorigin="anonymous"></script>
+
+    
+    <script>
+        function openSidebar(){
+            const sidebarEle = document.getElementById('sidebar');
+            sidebarEle.style.visibility='visible';
+
+            const hamburgurEle = document.getElementById('ham-menu');
+            hamburgurEle.style.visibility = 'hidden';
+        }
+
+        function closeSidebar(){
+            const sidebarEle = document.getElementById('sidebar');
+            sidebarEle.style.visibility='hidden';
+
+            const hamburgurEle = document.getElementById('ham-menu');
+            hamburgurEle.style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
